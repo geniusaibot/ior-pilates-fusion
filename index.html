@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IOR Pilates Fusion - Studio de Pilates Premium în București. Reformer, Mat, Stretch & Mobility. Instructori certificați, peste 5.000 de clienți satisfăcuți.">
+    <meta name="keywords" content="pilates, pilates bucuresti, reformer pilates, mat pilates, pilates studio, fitness, wellness, stretching">
+    <meta name="author" content="IOR Pilates Fusion">
+    <meta property="og:title" content="IOR Pilates Fusion - Studio de Pilates Premium București">
+    <meta property="og:description" content="Descoperă Puterea Pilates-ului la IOR Pilates Fusion. Instructorii noștri certificați te așteaptă.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ior-pilates-fusion.github.io">
+    <meta property="og:image" content="https://ior-pilates-fusion.github.io/images/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>IOR Pilates Fusion - Studio de Pilates Premium București</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A4A',
+                        secondary: '#8BA889',
+                        cream: '#F5F0E8',
+                        beige: '#D4C4A8',
+                        light: '#F8F6F2',
+                        softgreen: '#A8C5B5',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #F8F6F2 0%, #F5F0E8 50%, #E8E0D0 100%); }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); }
+        .btn-hover { transition: all 0.3s ease; }
+        .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(45,90,74,0.2); }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #2D5A4A; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-light">
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HealthClub",
+        "name": "IOR Pilates Fusion",
+        "description": "Studio de Pilates Premium în București",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bulevardul Theodor Pallady 287, Etaj 4",
+            "addressLocality": "București",
+            "addressCountry": "RO"
+        },
+        "telephone": "+40747452837",
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 07:00-22:00",
+        "rating": {
+            "@type": "Rating",
+            "ratingValue": "4.9",
+            "reviewCount": "5000"
+        },
+        "image": "https://ior-pilates-fusion.github.io/images/hero.jpg"
+    }
+    </script>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 glass border-b border-beige/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl sm:text-3xl font-bold text-primary">IOR</span>
+                    <span class="text-lg sm:text-xl text-secondary font-medium">Pilates Fusion</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-primary font-medium">Acasă</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-primary">Despre</a>
+                    <a href="classes.html" class="nav-link text-gray-600 hover:text-primary">Clase</a>
+                    <a href="schedule.html" class="nav-link text-gray-600 hover:text-primary">Program</a>
+                    <a href="contact.html" class="nav-link text-gray-600 hover:text-primary">Contact</a>
+                    <a href="contact.html" class="btn-hover bg-primary text-white px-6 py-2 rounded-full font-medium">Rezervă Acum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-light border-t border-beige/30">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-primary font-medium py-2">Acasă</a>
+                <a href="about.html" class="block text-gray-600 py-2">Despre</a>
+                <a href="classes.html" class="block text-gray-600 py-2">Clase</a>
+                <a href="schedule.html" class="block text-gray-600 py-2">Program</a>
+                <a href="contact.html" class="block text-primary font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-softgreen rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-beige rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 text-center relative z-10">
+            <div class="fade-in">
+                <p class="text-secondary font-medium mb-4 tracking-widest uppercase text-sm">Bine ai venit la</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+                    IOR Pilates Fusion
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Transformă-ți corpul și mintea prin puterea Pilates-ului. 
+                    Studio nostru premium te așteaptă pentru o experiență de neuitat.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="btn-hover bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
+                        Programează-o Acum
+                    </a>
+                    <a href="classes.html" class="btn-hover border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary hover:text-white">
+                        Vezi Clasele
+                    </a>
+                </div>
+
+                <!-- Rating Badge -->
+                <div class="mt-10 flex items-center justify-center gap-2">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <span class="text-gray-600 font-medium">4.9 rating</span>
+                    <span class="text-gray-400">•</span>
+                    <span class="text-gray-500">5.000+ recenzii</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">De Ce să Alegi IOR Pilates Fusion?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Suntem mai mult decât un studio de pilates - suntem o comunitate dedicată transformării tale</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="text-center p-6 rounded-2xl bg-cream fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-softgreen rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">5.000+ Clienți</h3>
+                    <p class="text-gray-600">Comunitatea noastră a crescut organic prin recomandări</p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-cream fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-softgreen rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Instructori Profesioniști</h3>
+                    <p class="text-gray-600">Echipa noastră are certificări internaționale</p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-cream fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-softgreen rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Echipamente Premium</h3>
+                    <p class="text-gray-600">Reformere de calitate superioară și accesorii profesionale</p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-cream fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-softgreen rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Program Flexibil</h3>
+                    <p class="text-gray-600">Clase disponibile de la 7:00 dimineața până la 22:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Preview -->
+    <section class="py-16 sm:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Clasele Noastre</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Descoperă tipul de pilates care ți se potrivește cel mai bine</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Reformer Pilates</h3>
+                        <p class="text-gray-600 text-sm mb-4">Transformă-ți corpul cu ajutorul reformer-ului</p>
+                        <a href="classes.html" class="text-primary font-medium hover:underline">Află mai mult →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-softgreen flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Mat Pilates</h3>
+                        <p class="text-gray-600 text-sm mb-4">Tehnica clasică pentru core și flexibilitate</p>
+                        <a href="classes.html" class="text-primary font-medium hover:underline">Află mai mult →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="h-48 bg-gradient-to-br from-beige to-cream flex items-center justify-center">
+                        <svg class="w-20 h-20 text-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Stretch & Mobility</h3>
+                        <p class="text-gray-600 text-sm mb-4">Mobilitate și stretch pentru corp și minte</p>
+                        <a href="classes.html" class="text-primary font-medium hover:underline">Află mai mult →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="h-48 bg-gradient-to-br from-softgreen to-primary flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">Sesiuni Private</h3>
+                        <p class="text-gray-600 text-sm mb-4">Atenție personalizată pentru rezultate rapide</p>
+                        <a href="classes.html" class="text-primary font-medium hover:underline">Află mai mult →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="classes.html" class="btn-hover inline-block bg-primary text-white px-8 py-3 rounded-full font-medium">Vezi Toate Clasele</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Ce Spun Clienții Noștri</h2>
+                <p class="text-gray-600">Peste 5.000 de persoane au descoperit beneficiile Pilates-ului la IOR</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-cream p-6 rounded-2xl fade-in">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Am început ca începătoare și acum nu mai pot lipsi din clasă. Instructoarele sunt răbdătoare și profesioniste. Recomand cu drag!"</p>
+                    <p class="font-medium text-primary">- Maria I.</p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl fade-in">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Cel mai bun studio de pilates din București! Atmosferă wonderful, echipamente noi și rezultate vizibile după doar câteva săptămâni."</p>
+                    <p class="font-medium text-primary">- Alexandru M.</p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl fade-in">
+                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-4">"Am descoperit pilates-ul aici și mi-a schimbat viața. Mă simt mai puternică, mai flexibilă și mai încrezătoare. Mulțumesc IOR!"</p>
+                    <p class="font-medium text-primary">- Elena C.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 sm:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Galeria Noastră</h2>
+                <p class="text-gray-600">O privire în lumea IOR Pilates Fusion</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center fade-in">
+                    <svg class="w-12 h-12 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-secondary/20 to-softgreen/20 rounded-2xl flex items-center justify-center fade-in">
+                    <svg class="w-12 h-12 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-beige/30 to-cream rounded-2xl flex items-center justify-center fade-in">
+                    <svg class="w-12 h-12 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-softgreen/20 to-primary/20 rounded-2xl flex items-center justify-center fade-in">
+                    <svg class="w-12 h-12 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-softgreen rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Pregătită/ă să Începi Transformarea?</h2>
+            <p class="text-white/80 text-lg mb-8">Programarea ta te așteaptă. Hai să descoperim împreună puterea Pilates-ului!</p>
+            <a href="contact.html" class="btn-hover inline-block bg-white text-primary px-10 py-4 rounded-full font-semibold text-lg">Programează-te Acum</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">IOR Pilates Fusion</h3>
+                    <p class="text-white/70">Studio de Pilates Premium în București</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">Link-uri Rapide</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/70 hover:text-white">Acasă</a></li>
+                        <li><a href="about.html" class="text-white/70 hover:text-white">Despre Noi</a></li>
+                        <li><a href="classes.html" class="text-white/70 hover:text-white">Clase</a></li>
+                        <li><a href="schedule.html" class="text-white/70 hover:text-white">Program</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li>Bulevardul Theodor Pallady 287, Etaj 4</li>
+                        <li>București, România</li>
+                        <li>+40 747 452 837</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">Program</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li>Luni - Vineri: 07:00 - 22:00</li>
+                        <li>Sâmbătă: 09:00 - 18:00</li>
+                        <li>Duminică: Închis</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center text-white/60">
+                <p>© 2024 IOR Pilates Fusion. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button (Mobile) -->
+    <a href="tel:+40747452837" class="fixed bottom-6 right-6 md:hidden bg-primary text-white p-4 rounded-full shadow-lg z-50 animate-pulse">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
